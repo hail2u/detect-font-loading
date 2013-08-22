@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Test Page for Detect Font Loading</title>
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Inconsolata:400,700">
+    <link rel="stylesheet" href="http://hail2u.github.io/natural.css">
+    <style>
+      .dfl-source_sans_pro body {
+        font-family: "Source Sans Pro", sans-serif;
+      }
+
+      .dfl-inconsolata pre,
+      .dfl-inconsolata code {
+        font-family: "Inconsolata", monospace;
+      }
+
+      header,
+      section {
+        width: 36em;
+        max-width: 100%;
+      }
+    </style>
+
+    <!--[if lt IE 9]><script src="http://hail2u.github.io/html5shiv.min.js"></script><![endif]-->
+    <script src="./detect-font-loading.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Test Page for Detect Font Loading</h1>
+    </header>
+
+    <section>
+      <h1>Lorem Ipsum Dolor Sit Amet</h1>
+
+      <p>Pellentesque ac enim nisl. Nullam vehicula iaculis justo ac tempus. Suspendisse in pretium mauris. Duis quis magna in turpis eleifend gravida quis ac massa. Nam cursus diam tellus, nec dictum mauris aliquam ac. In hac habitasse platea dictumst. Vestibulum mollis, metus nec sodales gravida, libero turpis eleifend eros, quis suscipit ante nisl non neque. Duis a ligula ac tortor pellentesque facilisis. Nunc vulputate suscipit sapien, a vestibulum lorem venenatis non. Donec at mollis sapien, non consequat leo. Sed pulvinar sapien vel dictum gravida.</p>
+
+      <pre><code>&lt;script src=&quot;./detect-font-loading.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  DFL.detect(&#39;Font Name&#39;, 30000, 1000);
+&lt;/script&gt;</code></pre>
+    </section>
+
+    <script>
+      DFL.detect('Source Sans Pro');
+      DFL.detect('Inconsolata');
+    </script>
+  </body>
+</html>
