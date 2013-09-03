@@ -10,6 +10,18 @@
       interval = 500;
     }
 
+    if (typeof fontName === 'string') {
+      this._doDetect(fontName, timeout, interval);
+    } else if (this._isArray(fontName)) {
+      for (var i = 0, l = fontName.length; i < l; i++) {
+        if (typeof fontName[i] === 'string') {
+          this._doDetect(fontName[i], timeout, interval);
+        }
+      }
+    }
+  };
+
+  DFL._doDetect = function (fontName, timeout, interval) {
     var tester = document.createElement('span');
     tester.style.fontFamily = '"' + fontName + '", "Adobe Blank"';
     tester.style.position = 'absolute';
@@ -29,6 +41,14 @@
         clearInterval(timerId);
         tester.parentNode.removeChild(tester);
       }
+    }
+  };
+
+  DFL._isArray = function (o) {
+    if (Array.isArray) {
+      return Array.isArray(o);
+    } else {
+      return (Object.prototype.toString.call(o) === '[object Array]');
     }
   };
 
