@@ -1,4 +1,9 @@
-(function () {
+/**
+ * @preserve Detect Font Loading v0.1.0
+ *
+ * LICENSE: http://hail2u.mit-license.org/2013
+ */
+;(function () {
   var DFL = {};
 
   DFL.detect = function (fontName, timeout, interval) {
