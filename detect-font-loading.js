@@ -7,7 +7,7 @@
     }
 
     if (!interval || typeof interval !== 'number') {
-      timeout = 500;
+      interval = 500;
     }
 
     var tester = document.createElement('span');
