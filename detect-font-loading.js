@@ -7,6 +7,10 @@
   var DFL = {};
 
   DFL.detect = function (fontName, timeout, interval) {
+    if (typeof fontName === 'string') {
+      fontName = [fontName];
+    }
+
     if (!timeout || typeof timeout !== 'number') {
       timeout = 15000;
     }
@@ -15,14 +19,8 @@
       interval = 500;
     }
 
-    if (typeof fontName === 'string') {
-      this._doDetect(fontName, timeout, interval);
-    } else if (this._isArray(fontName)) {
-      for (var i = 0, l = fontName.length; i < l; i++) {
-        if (typeof fontName[i] === 'string') {
-          this._doDetect(fontName[i], timeout, interval);
-        }
-      }
+    for (var i = 0, l = fontName.length; i < l; i++) {
+      this._doDetect(fontName[i], timeout, interval);
     }
   };
 
@@ -46,14 +44,6 @@
         clearInterval(timerId);
         tester.parentNode.removeChild(tester);
       }
-    }
-  };
-
-  DFL._isArray = function (o) {
-    if (Array.isArray) {
-      return Array.isArray(o);
-    } else {
-      return (Object.prototype.toString.call(o) === '[object Array]');
     }
   };
 
