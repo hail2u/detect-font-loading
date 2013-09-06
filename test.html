@@ -6,10 +6,18 @@
 
     <title>Test Page for Detect Font Loading</title>
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Inconsolata:400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic|Roboto+Slab:400,700|Source+Sans+Pro:400,700,400italic,700italic|Inconsolata:400,700">
     <link rel="stylesheet" href="http://hail2u.github.io/natural.css">
     <style>
-      .dfl-source_sans_pro body {
+      .dfl-merriweather body {
+        font-family: "Merriweather", serif;
+      }
+
+      .dfl-roboto_slab header h1 {
+        font-family: "Roboto Slab", serif;
+      }
+
+      .dfl-source_sans_pro h1 {
         font-family: "Source Sans Pro", sans-serif;
       }
 
@@ -17,16 +25,9 @@
       .dfl-inconsolata code {
         font-family: "Inconsolata", monospace;
       }
-
-      header,
-      section {
-        width: 36em;
-        max-width: 100%;
-      }
     </style>
 
     <!--[if lt IE 9]><script src="http://hail2u.github.io/html5shiv.min.js"></script><![endif]-->
-    <script src="./detect-font-loading.js"></script>
   </head>
   <body>
     <header>
@@ -44,7 +45,10 @@
 &lt;/script&gt;</code></pre>
     </section>
 
+    <script src="./detect-font-loading.js"></script>
     <script>
+      DFL.detect('Merriweather', 30000, 1000);
+      DFL.detect('Roboto Slab', 30000);
       DFL.detect(['Source Sans Pro', 'Inconsolata']);
     </script>
   </body>
