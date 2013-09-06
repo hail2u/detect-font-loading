@@ -1,5 +1,5 @@
 /**
- * @preserve Detect Font Loading v0.1.0
+ * @preserve Detect Font Loading v0.1.1
  *
  * LICENSE: http://hail2u.mit-license.org/2013
  */
