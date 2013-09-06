@@ -20,11 +20,11 @@
     }
 
     for (var i = 0, l = fontName.length; i < l; i++) {
-      this._doDetect(fontName[i], timeout, interval);
+      _doDetect(fontName[i], timeout, interval);
     }
   };
 
-  DFL._doDetect = function (fontName, timeout, interval) {
+  var _doDetect = function (fontName, timeout, interval) {
     var tester = document.createElement('span');
     tester.style.fontFamily = '"' + fontName + '", "Adobe Blank"';
     tester.style.position = 'absolute';
