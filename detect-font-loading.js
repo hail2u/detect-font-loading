@@ -31,11 +31,9 @@
     tester.style.top = '-100px';
     tester.appendChild(document.createTextNode('a'));
     document.body.appendChild(tester);
+    var timerId = setInterval(function () {
+      timeout = timeout - interval;
 
-    var timerId = setInterval(checkWidth, interval);
-    timeout = timeout - interval;
-
-    function checkWidth() {
       if (tester.offsetWidth > 0) {
         clearInterval(timerId);
         document.documentElement.className += ' dfl-' + fontName.toLowerCase().replace(/\s/g, '_');
@@ -44,7 +42,7 @@
         clearInterval(timerId);
         tester.parentNode.removeChild(tester);
       }
-    }
+    }, interval);
   };
 
   var style = document.createElement('style');
