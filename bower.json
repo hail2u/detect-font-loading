@@ -1,19 +1,10 @@
 {
   "name": "detect-font-loading",
-  "main": "detect-font-loading.js",
   "version": "0.1.1",
-  "homepage": "https://github.com/hail2u/detect-font-loading",
-  "authors": [
-    "Kyo Nagashima <kyo@hail2u.net>"
-  ],
-  "description": "A JavaScript library adds class name to `html` element when font loaded.",
-  "keywords": [
-    "font",
-    "webfont"
-  ],
-  "license": "MIT",
+  "main": "detect-font-loading.js",
   "ignore": [
-    "README.md",
+    "**/.*",
+    "bower.json",
     "test.html"
   ]
 }
