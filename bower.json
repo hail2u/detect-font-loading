@@ -1,6 +1,6 @@
 {
   "name": "detect-font-loading",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "detect-font-loading.js",
   "ignore": [
     "**/.*",
